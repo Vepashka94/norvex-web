@@ -120,6 +120,7 @@ Hizmetlerimiz
 
 </section>
 
+```html
 <!-- Stats -->
 <section class="py-20 bg-white">
 
@@ -128,22 +129,30 @@ Hizmetlerimiz
 <div class="grid md:grid-cols-4 gap-8">
 
 <div class="bg-slate-100 p-8 rounded-2xl text-center fade-up">
-<h3 class="text-4xl font-bold text-primary">150+</h3>
+<h3 id="projects" class="text-4xl font-bold text-primary">
+150+
+</h3>
 <p class="mt-2">Tamamlanan Proje</p>
 </div>
 
 <div class="bg-slate-100 p-8 rounded-2xl text-center fade-up">
-<h3 class="text-4xl font-bold text-primary">50+</h3>
+<h3 id="clients" class="text-4xl font-bold text-primary">
+50+
+</h3>
 <p class="mt-2">Kurumsal Müşteri</p>
 </div>
 
 <div class="bg-slate-100 p-8 rounded-2xl text-center fade-up">
-<h3 class="text-4xl font-bold text-primary">12+</h3>
+<h3 id="experience" class="text-4xl font-bold text-primary">
+12+
+</h3>
 <p class="mt-2">Yıllık Deneyim</p>
 </div>
 
 <div class="bg-slate-100 p-8 rounded-2xl text-center fade-up">
-<h3 class="text-4xl font-bold text-primary">%98</h3>
+<h3 id="satisfaction" class="text-4xl font-bold text-primary">
+%98
+</h3>
 <p class="mt-2">Memnuniyet Oranı</p>
 </div>
 
@@ -152,6 +161,41 @@ Hizmetlerimiz
 </div>
 
 </section>
+
+<script>
+
+let projects = 150;
+let clients = 50;
+let experience = 12;
+let satisfaction = 98;
+
+setInterval(() => {
+
+    projects += Math.floor(Math.random() * 3);
+    clients += Math.floor(Math.random() * 2);
+
+    if (Math.random() > 0.7) {
+        experience++;
+    }
+
+    satisfaction = Math.random() > 0.5 ? 98 : 99;
+
+    document.getElementById("projects").innerText =
+        projects + "+";
+
+    document.getElementById("clients").innerText =
+        clients + "+";
+
+    document.getElementById("experience").innerText =
+        experience + "+";
+
+    document.getElementById("satisfaction").innerText =
+        "%" + satisfaction;
+
+}, 10000);
+
+</script>
+```
 
 
 <section id="services" class="py-24 bg-slate-50">
